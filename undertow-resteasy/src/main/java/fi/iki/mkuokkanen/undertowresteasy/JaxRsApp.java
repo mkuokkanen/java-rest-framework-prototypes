@@ -6,7 +6,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-@ApplicationPath("/base")
+@ApplicationPath("/app")
 public class JaxRsApp extends Application {
 
     @Override

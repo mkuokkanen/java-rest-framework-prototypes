@@ -9,13 +9,13 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Application;
 
-public class ServerTest extends Application {
+public class URServerTest extends Application {
 
-    private static Server server;
+    private static URServer server;
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        server = new Server();
+        server = new URServer();
     }
 
     @AfterClass
@@ -26,7 +26,7 @@ public class ServerTest extends Application {
     @Test
     public void testRestResource() throws Exception {
         Client client = ClientBuilder.newClient();
-        String val = client.target("http://localhost:8080/context/base/test")
+        String val = client.target("http://localhost:8080/context/app/test/basic")
             .request().get(String.class);
         Assert.assertEquals("hello world", val);
         client.close();

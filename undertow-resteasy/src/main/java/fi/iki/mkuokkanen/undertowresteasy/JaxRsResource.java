@@ -7,6 +7,7 @@ import javax.ws.rs.Produces;
 @Path("/test")
 public class JaxRsResource {
 
+    @Path("/basic")
     @GET
     @Produces("text/plain")
     public String get() {

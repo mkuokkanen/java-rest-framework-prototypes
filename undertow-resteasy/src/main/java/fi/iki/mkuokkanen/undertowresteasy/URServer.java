@@ -5,11 +5,11 @@ import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
 import io.undertow.Undertow;
 import io.undertow.servlet.api.DeploymentInfo;
 
-public class Server {
+public class URServer {
 
     private final UndertowJaxrsServer server;
 
-    public Server() {
+    public URServer() {
         server = new UndertowJaxrsServer();
         server.start(Undertow.builder().addHttpListener(8080, "0.0.0.0"));
 
