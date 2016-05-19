@@ -1,0 +1,36 @@
+###
+# generic files to ignore
+#
+
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+
+###
+# Java related files to ignore
+#
+
+# compiled stuff
+*.class
+*.jar
+*.war
+*.ear
+
+# eclipse specific
+.classpath
+.project
+.settings/
+
+# idea specific
+*.iml
+.idea
+
+# eclipse and ant have dendency to create bin
+bin/
+
+# maven specific
+target/
+dependency-reduced-pom.xml
