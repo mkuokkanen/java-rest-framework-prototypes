@@ -2,7 +2,6 @@ package fi.iki.mkuokkanen.grizzlyjersey;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
-import org.glassfish.jersey.server.ResourceConfig;
 
 import java.net.URI;
 
@@ -18,13 +17,9 @@ public class GJServer {
 
     public static GJServer buildStartedServer() {
 
-        // ResourceConfig extends Jax-rs application class with extra features
-        // Here we just use it as it is.
-        ResourceConfig rc = ResourceConfig.forApplicationClass(JaxRsApp.class);
-
         final HttpServer grizzlyServer = GrizzlyHttpServerFactory.createHttpServer(
             getBaseURI(),
-            rc,
+            new JaxRsApp(),
             true
         );
 

@@ -1,20 +1,23 @@
 package fi.iki.mkuokkanen.grizzlyjersey;
 
-import java.util.HashSet;
-import java.util.Set;
+import org.glassfish.jersey.logging.LoggingFeature;
+import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.mvc.freemarker.FreemarkerMvcFeature;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+/**
+ * ResourceConfig extends JaxRs Application with extra features.
+ */
+public class JaxRsApp extends ResourceConfig {
 
-//Application path is ignored by jersey?
-//@ApplicationPath("/gj")
-public class JaxRsApp extends Application {
+    public JaxRsApp() {
 
-    @Override
-    public Set<Class<?>> getClasses() {
-        HashSet<Class<?>> classes = new HashSet<>();
-        classes.add(JaxRsResource.class);
-        return classes;
+        property(FreemarkerMvcFeature.TEMPLATE_BASE_PATH, "templates");
+        property(FreemarkerMvcFeature.CACHE_TEMPLATES, true);
+
+        register(FreemarkerMvcFeature.class);
+        register(LoggingFeature.class);
+
+        register(JaxRsResource.class);
     }
 }
 
