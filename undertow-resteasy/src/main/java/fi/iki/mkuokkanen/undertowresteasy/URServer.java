@@ -10,8 +10,11 @@ public class URServer {
     private final UndertowJaxrsServer server;
 
     public URServer() {
+        Undertow.Builder builder = Undertow.builder()
+            .addHttpListener(8080, "0.0.0.0");
+
         server = new UndertowJaxrsServer();
-        server.start(Undertow.builder().addHttpListener(8080, "0.0.0.0"));
+        server.start(builder);
 
         deployWithDescription();
         //deployStraight();
