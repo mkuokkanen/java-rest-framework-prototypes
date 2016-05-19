@@ -13,12 +13,16 @@ mvn versions:display-plugin-updates
 ## Grizzly + Jersey
 
 ```bash 
-cd grizzly-jersey/
 mvn clean install
-cd target/
-unzip grizzly-jersey-proto-0.0.1-SNAPSHOT-distribution.zip
-cd grizzly-jersey-proto-0.0.1-SNAPSHOT/
-java -jar grizzly-jersey-proto-0.0.1-SNAPSHOT.jar
+cd grizzly-jersey/target/
+unzip grizzly-jersey-0.0.1-SNAPSHOT-distribution.zip
+cd grizzly-jersey-0.0.1-SNAPSHOT/
+java -jar grizzly-jersey-0.0.1-SNAPSHOT.jar
+```
+
+```bash 
+curl http://localhost:8080/test/page
+curl http://localhost:8080/test/hello
 ```
 
 Zip file size 6.6 MB.
@@ -26,12 +30,16 @@ Zip file size 6.6 MB.
 ## Undertow + RestEasy
 
 ```bash 
-cd undertow-resteasy/
 mvn clean install
-cd target/
-unzip undertow-resteasy-proto-0.0.1-SNAPSHOT-distribution.zip
-cd undertow-resteasy-proto-0.0.1-SNAPSHOT/
-java -jar undertow-resteasy-proto-0.0.1-SNAPSHOT.jar
+cd undertow-resteasy/target/
+unzip undertow-resteasy-0.0.1-SNAPSHOT-distribution.zip
+cd undertow-resteasy-0.0.1-SNAPSHOT/
+java -jar undertow-resteasy-0.0.1-SNAPSHOT.jar
+```
+
+```bash 
+curl http://localhost:8080/context/app/test/page
+curl http://localhost:8080/context/app/test/hello
 ```
 
 Zip file size 6.4 MB.
