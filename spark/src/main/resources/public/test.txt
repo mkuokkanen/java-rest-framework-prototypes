@@ -1,0 +1,2 @@
+Test static file served with Spark
+Reachable in /test.txt

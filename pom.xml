@@ -29,6 +29,7 @@
   <modules>
     <module>grizzly-jersey</module>
     <module>undertow-resteasy</module>
+    <module>spark</module>
   </modules>
 
   <build>

@@ -29,6 +29,10 @@ Zip file size 6.6 MB.
 
 ## Undertow + RestEasy
 
+RestEasy does not support FreeMarker, Mustache or similar. So had to hack it together myself.
+
+JavaScript corner of Undertow, undertow.js, might support something like that, but it is still prototype AFAIK.
+
 ```bash 
 mvn clean install
 cd undertow-resteasy/target/
@@ -44,8 +48,26 @@ curl http://localhost:8080/context/app/test/hello
 
 Zip file size 6.4 MB.
 
-RestEasy does not support FreeMarker, Mustache or similar. So had to hack it together myself.
 
-JavaScript corner of Undertow might support something like that, but it is still prototype AFAIK.
+
+## Jetty + Spark
+
+Jetty is embedded deep, it is not visible to programmer
+
+```bash 
+mvn clean install
+cd spark/target/
+unzip spark-0.0.1-SNAPSHOT-distribution.zip
+cd spark-0.0.1-SNAPSHOT/
+java -jar spark-0.0.1-SNAPSHOT.jar
+```
+
+```bash 
+curl http://localhost:8080/test/page
+curl http://localhost:8080/test/hello
+```
+
+Zip file size 2.6 MB.
+
 
 
