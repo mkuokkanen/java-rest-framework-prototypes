@@ -1,16 +1,33 @@
 
-Prototypes of different rest api + page template solutions. 
-Idea would be that same software could create html page dynamically 
-and then support the ajax calls it will make.
+## Introduction
 
-## Usefule maven commands
+Prototypes of different lightweigh rest api + page template solutions. 
+They all implement almost indentical features.
+
+### Useful maven commands for checking updates
 
 ```bash 
 mvn versions:display-dependency-updates
 mvn versions:display-plugin-updates
 ```
 
-## Grizzly + Jersey
+### Building and running software
+
+All software modules are build together from root `pom.xml` with `mvn clean install`. 
+Maven uses Assembly plugin to build zip package 
+with main artifact jar in root 
+and dependency jars in subfolder `lib`.
+Main artifact Manifest is wired to load classes from lib folder, 
+so `java -jar daa.jar` is enough to run the software.
+
+
+## Prototypes
+
+### Grizzly + Jersey
+
+Jersey provides JAX-RS and FreeMarker template support. 
+Also provides wrapper to Grizzly NIO server software.
+Jersey people seem to do close collabaration with Grizzly people.
 
 ```bash 
 mvn clean install
@@ -27,11 +44,11 @@ curl http://localhost:8080/test/hello
 
 Zip file size 6.6 MB.
 
-## Undertow + RestEasy
+### Undertow + RestEasy
 
-RestEasy does not support FreeMarker, Mustache or similar. So had to hack it together myself.
+RestEasy provides JAX-RS and wrapper to Undertow NIO server software. RestEasy people seem to collaborate with Undertow people.
 
-JavaScript corner of Undertow, undertow.js, might support something like that, but it is still prototype AFAIK.
+RestEasy does not support templating FreeMarker, Mustache or similar, so I had to hack it together myself. Solution could be more elegant. JavaScript corner of Undertow, undertow.js, might support FreeMarker, but it is still prototype AFAIK.
 
 ```bash 
 mvn clean install
@@ -50,9 +67,11 @@ Zip file size 6.4 MB.
 
 
 
-## Jetty + Spark
+### Jetty + Spark
 
-Jetty is embedded deep, it is not visible to programmer
+Spark is not JAX-RS compliant. The REST api declaration syntax is much more compact and cleaner.
+I like it.
+Spark embeds Jetty server software deep inside, it is not immediately visible to programmer
 
 ```bash 
 mvn clean install
@@ -68,6 +87,4 @@ curl http://localhost:8080/test/hello
 ```
 
 Zip file size 2.6 MB.
-
-
 
