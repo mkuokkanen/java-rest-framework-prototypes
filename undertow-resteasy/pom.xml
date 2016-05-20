@@ -51,48 +51,18 @@
     <plugins>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
         <configuration>
           <archive>
             <manifest>
               <mainClass>fi.iki.mkuokkanen.undertowresteasy.URApp</mainClass>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>lib/</classpathPrefix>
             </manifest>
           </archive>
         </configuration>
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <descriptors>
-            <descriptor>src/assembly/src.xml</descriptor>
-          </descriptors>
-          <!--
-          <archive>
-            <manifest>
-              <mainClass>fi.iki.mkuokkanen.undertowresteasy.App</mainClass>
-              <packageName>fi.iki.mkuokkanen.undertowresteasy</packageName>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>/lib</classpathPrefix>
-            </manifest>
-          </archive>
-          -->
-        </configuration>
       </plugin>
     </plugins>
   </build>
