@@ -20,6 +20,26 @@ and dependency jars in subfolder `lib`.
 Main artifact Manifest is wired to load classes from lib folder, 
 so `java -jar daa.jar` is enough to run the software.
 
+### Testing running software
+
+```bash 
+# This should work for all apps, return "hello world" as string
+curl http://localhost:8080/test/hello
+
+# This should work for all apps, return "Hello Matti!" from FreeMarker template
+curl http://localhost:8080/test/page
+
+```
+
+### Some stats
+
+| Solution           | JAR size  |
+|--------------------|-----------|
+| grizzly-jersey     | 6.6 MB    | 
+| spark              | 2.6 MB    |
+| undertow-resteasy  | 6.4 MB    |
+| vertx              | 5.9 MB    | 
+
 
 ## Prototypes
 
@@ -37,13 +57,6 @@ cd grizzly-jersey-0.0.1-SNAPSHOT/
 java -jar grizzly-jersey-0.0.1-SNAPSHOT.jar
 ```
 
-```bash 
-curl http://localhost:8080/test/page
-curl http://localhost:8080/test/hello
-```
-
-Zip file size 6.6 MB.
-
 ### Undertow + RestEasy
 
 RestEasy provides JAX-RS and wrapper to Undertow NIO server software. RestEasy people seem to collaborate with Undertow people.
@@ -57,15 +70,6 @@ unzip undertow-resteasy-0.0.1-SNAPSHOT-distribution.zip
 cd undertow-resteasy-0.0.1-SNAPSHOT/
 java -jar undertow-resteasy-0.0.1-SNAPSHOT.jar
 ```
-
-```bash 
-curl http://localhost:8080/context/app/test/page
-curl http://localhost:8080/context/app/test/hello
-```
-
-Zip file size 6.4 MB.
-
-
 
 ### Jetty + Spark
 
@@ -81,10 +85,19 @@ cd spark-0.0.1-SNAPSHOT/
 java -jar spark-0.0.1-SNAPSHOT.jar
 ```
 
+
+### Vert.x
+
+Vert.x is big project trying to push a (event driven and async?) paradigm.
+Multiple different features, like CLI tool, own deployment mechanisms, different languages etc.
+Something strange with mapping absolute URLs to page templates, a bug? 
+Freemarker was found from GitHub source code, but no artifact in maven central.
+It is much bigger project than just a rest API.
+
 ```bash 
-curl http://localhost:8080/test/page
-curl http://localhost:8080/test/hello
+mvn clean install
+cd spark/target/
+unzip spark-0.0.1-SNAPSHOT-distribution.zip
+cd spark-0.0.1-SNAPSHOT/
+java -jar spark-0.0.1-SNAPSHOT.jar
 ```
-
-Zip file size 2.6 MB.
-
