@@ -13,6 +13,9 @@ import static org.hamcrest.CoreMatchers.startsWith;
 
 public class URServerTest extends Application {
 
+    //public static final String URL_PREFIX = "http://localhost:8080/context/app";
+    public static final String URL_PREFIX = "http://localhost:8080/";
+
     private static URServer server;
 
     @BeforeClass
@@ -28,7 +31,7 @@ public class URServerTest extends Application {
     @Test
     public void testRestResource() throws Exception {
         Client client = ClientBuilder.newClient();
-        String val = client.target("http://localhost:8080/context/app/test/hello")
+        String val = client.target(URL_PREFIX + "/test/hello" )
             .request().get(String.class);
         Assert.assertEquals("hello world", val);
         client.close();
@@ -37,7 +40,7 @@ public class URServerTest extends Application {
     @Test
     public void testPageResource() throws Exception {
         Client client = ClientBuilder.newClient();
-        String val = client.target("http://localhost:8080/context/app/test/page")
+        String val = client.target(URL_PREFIX + "/test/page")
             .request().get(String.class);
         Assert.assertThat(val, startsWith("Hello Matti!"));
         client.close();

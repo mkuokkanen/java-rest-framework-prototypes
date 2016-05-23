@@ -16,8 +16,8 @@ public class URServer {
         server = new UndertowJaxrsServer();
         server.start(builder);
 
-        deployWithDescription();
-        //deployStraight();
+        //deployWithDescription();
+        deployStraight();
     }
 
     private void deployWithDescription() {
