@@ -29,6 +29,15 @@
       <artifactId>jersey-container-grizzly2-servlet</artifactId>
       <version>${jersey.version}</version>
     </dependency>
+
+    <!-- Moxy is suggested by documentation -->
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-moxy</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+
+    <!-- template module -->
     <dependency>
       <groupId>org.glassfish.jersey.ext</groupId>
       <artifactId>jersey-mvc-freemarker</artifactId>

@@ -2,8 +2,11 @@ package fi.iki.mkuokkanen.vertxproto;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
+import io.vertx.core.http.HttpMethod;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.TemplateHandler;
 import io.vertx.ext.web.templ.HandlebarsTemplateEngine;
 import io.vertx.ext.web.templ.TemplateEngine;
@@ -18,12 +21,24 @@ public class RestVerticle extends AbstractVerticle {
         TemplateEngine engine = HandlebarsTemplateEngine.create();
         TemplateHandler templateHandler = TemplateHandler.create(engine);
 
-        router.get("/test/hello").handler(this::getHello);
+        // not needed because body is not read here?
+        //router.route().handler(BodyHandler.create());
 
-        router.route("/test/page").handler(this::getPage);
-        router.route("/test/page").handler(templateHandler);
+        router.get("/test/hello")
+            //.produces("text/plain")
+            .handler(this::getHello);
 
-        // Create the HTTP server and pass the "accept" method to the request handler.
+        router.route(HttpMethod.GET, "/test/page")
+            //.produces("text/html")
+            .handler(this::getPage);
+
+        router.route(HttpMethod.GET, "/test/page")
+            .handler(templateHandler);
+
+        router.get("/test/json")
+            //.produces("application/json")
+            .handler(this::handleGetJson);
+
         vertx
             .createHttpServer()
             .requestHandler(router::accept)
@@ -37,6 +52,7 @@ public class RestVerticle extends AbstractVerticle {
                     }
                 }
             );
+
     }
 
     private void getHello(RoutingContext routingContext) {
@@ -49,5 +65,18 @@ public class RestVerticle extends AbstractVerticle {
     private void getPage(RoutingContext routingContext) {
         routingContext.put("user", "Matti");
         routingContext.next();
+    }
+
+    private void handleGetJson(RoutingContext ctx) {
+        String name = ctx.request().getParam("name");
+        int age = new Integer(ctx.request().getParam("age"));
+
+        JsonObject person = new JsonObject()
+            .put("name", name)
+            .put("age", age);
+
+        ctx.response()
+            .putHeader("content-type", "application/json")
+            .end(person.encode());
     }
 }

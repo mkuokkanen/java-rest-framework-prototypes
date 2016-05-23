@@ -1,5 +1,7 @@
 package fi.iki.mkuokkanen.sparkproto;
 
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,11 +27,24 @@ public class SparkApplication {
         get("/test/hello", "text/plain", (req, res) -> "hello world");
 
         get("/test/page", "text/html", SparkApplication::handleGetPage, new FreeMarkerEngine());
+
+        Gson gson = new Gson();
+        get("/test/json", "application/json", SparkApplication::handleGetJson, gson::toJson);
+
     }
 
     private static ModelAndView handleGetPage(Request req, Response res) {
         Map<String, Object> attributes = new HashMap<>();
         attributes.put("user", "Matti");
         return new ModelAndView(attributes, "index.ftl");
+    }
+
+    private static Person handleGetJson(Request req, Response res) {
+        String name = req.queryParams("name");
+        int age = Integer.valueOf(req.queryParams("age"));
+
+        res.type("application/json");
+
+        return new Person(name, age);
     }
 }
