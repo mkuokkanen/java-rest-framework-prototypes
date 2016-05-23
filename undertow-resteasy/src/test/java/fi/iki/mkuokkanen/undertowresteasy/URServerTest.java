@@ -8,8 +8,10 @@ import org.junit.Test;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
 
 import static org.hamcrest.CoreMatchers.startsWith;
+import static org.junit.Assert.assertEquals;
 
 public class URServerTest extends Application {
 
@@ -43,6 +45,22 @@ public class URServerTest extends Application {
         String val = client.target(URL_PREFIX + "/test/page")
             .request().get(String.class);
         Assert.assertThat(val, startsWith("Hello Matti!"));
+        client.close();
+    }
+
+    @Test
+    public void testJsonResource() throws Exception {
+        Client client = ClientBuilder.newClient();
+        PersonJaxb val = client
+            .target(URL_PREFIX + "/test/json")
+            .queryParam("name", "Mikko")
+            .queryParam("age", 15)
+            .request()
+            .accept(MediaType.APPLICATION_JSON_TYPE)
+            .get(PersonJaxb.class);
+
+        assertEquals(15, val.age);
+        assertEquals("Mikko", val.name);
         client.close();
     }
 }

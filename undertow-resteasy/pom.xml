@@ -28,7 +28,13 @@
       <artifactId>resteasy-jaxrs</artifactId>
       <version>${resteasy.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jettison-provider</artifactId>
+      <version>${resteasy.version}</version>
+    </dependency>
 
+    <!-- Manage Undertow version, not needed? -->
     <dependency>
       <groupId>io.undertow</groupId>
       <artifactId>undertow-core</artifactId>
@@ -40,6 +46,7 @@
       <version>${undertow.version}</version>
     </dependency>
 
+    <!-- Templating done manually -->
     <dependency>
       <groupId>org.freemarker</groupId>
       <artifactId>freemarker</artifactId>

@@ -8,11 +8,15 @@ import org.junit.Test;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
 
 import static org.hamcrest.CoreMatchers.startsWith;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class GJServerTest extends Application {
 
+    public static final String URL_PREFIX = "http://localhost:8080/test/";
     private static GJServer server;
 
     @BeforeClass
@@ -28,7 +32,7 @@ public class GJServerTest extends Application {
     @Test
     public void testRestResource() throws Exception {
         Client client = ClientBuilder.newClient();
-        String val = client.target("http://localhost:8080/test/hello")
+        String val = client.target(URL_PREFIX + "hello")
             .request().get(String.class);
         Assert.assertEquals("hello world", val);
         client.close();
@@ -37,9 +41,25 @@ public class GJServerTest extends Application {
     @Test
     public void testPageResource() throws Exception {
         Client client = ClientBuilder.newClient();
-        String val = client.target("http://localhost:8080/test/page")
+        String val = client.target(URL_PREFIX + "page")
             .request().get(String.class);
-        Assert.assertThat(val, startsWith("Hello Matti!"));
+        assertThat(val, startsWith("Hello Matti!"));
+        client.close();
+    }
+
+    @Test
+    public void testJsonResource() throws Exception {
+        Client client = ClientBuilder.newClient();
+        PersonJaxb val = client
+            .target(URL_PREFIX + "json")
+            .queryParam("name", "Mikko")
+            .queryParam("age", 15)
+            .request()
+            .accept(MediaType.APPLICATION_JSON_TYPE)
+            .get(PersonJaxb.class);
+
+        assertEquals(15, val.age);
+        assertEquals("Mikko", val.name);
         client.close();
     }
 }

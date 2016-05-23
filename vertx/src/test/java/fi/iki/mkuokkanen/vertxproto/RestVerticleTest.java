@@ -66,4 +66,21 @@ public class RestVerticleTest {
             });
         });
     }
+
+    @Test
+    public void testGetJson(TestContext context) {
+        final Async async = context.async();
+
+        vertx.createHttpClient().getNow(port, "localhost", "/test/json" + "?name=Daa&age=5", response -> {
+            response.handler(body -> {
+
+                JsonObject json = body.toJsonObject();
+
+                context.assertEquals("Daa", json.getString("name"), "Name string did not match");
+                context.assertEquals(5, json.getInteger("age"), "Age int did not match");
+
+                async.complete();
+            });
+        });
+    }
 }
