@@ -45,6 +45,8 @@ curl http://localhost:8080/test/page
 
 ### Grizzly + Jersey
 
+The Oracle Glassfish solution.
+
 Jersey provides JAX-RS and FreeMarker template support. 
 Also provides wrapper to Grizzly NIO server software.
 Jersey people seem to do close collabaration with Grizzly people.
@@ -58,6 +60,8 @@ java -jar grizzly-jersey-0.0.1-SNAPSHOT.jar
 ```
 
 ### Undertow + RestEasy
+
+The JBoss Wildfly solution.
 
 RestEasy provides JAX-RS and wrapper to Undertow NIO server software. RestEasy people seem to collaborate with Undertow people.
 
