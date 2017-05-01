@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>vertx</artifactId>
+  <artifactId>vertx-netty-handlebars</artifactId>
 
   <properties>
     <vertx.version>3.2.1</vertx.version>
