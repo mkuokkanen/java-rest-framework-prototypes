@@ -38,15 +38,15 @@ curl "http://localhost:8080/test/json?name=Mikko&age=20"
 
 | Solution           | JAR size  |
 |--------------------|-----------|
-| grizzly-jersey     | 12 MB     | 
-| undertow-resteasy  | 7.9 MB    |
-| spark              | 2.8 MB    |
-| vertx              | 5.9 MB    | 
+| jersey-grizzly-freemarker     | 12 MB     | 
+| resteasy-undertow-freemarker  | 7.9 MB    |
+| spark-jetty-freemarker        | 2.8 MB    |
+| vertx-netty-handlebars        | 5.9 MB    | 
 
 
 ## Prototypes
 
-### Grizzly + Jersey
+### Jersey + Grizzly + Freemarker
 
 The Oracle Glassfish solution. 
 Traditional approach. 
@@ -61,13 +61,13 @@ EclipseLink Moxy has also roots in Oracle.
 
 ```bash 
 mvn clean install
-cd grizzly-jersey/target/
-unzip grizzly-jersey-0.0.1-SNAPSHOT-distribution.zip
-cd grizzly-jersey-0.0.1-SNAPSHOT/
-java -jar grizzly-jersey-0.0.1-SNAPSHOT.jar
+cd jersey-grizzly-freemarker/target/
+unzip jersey-grizzly-freemarker-0.0.1-SNAPSHOT-distribution.zip
+cd jersey-grizzly-freemarker-0.0.1-SNAPSHOT/
+java -jar jersey-grizzly-freemarker-0.0.1-SNAPSHOT.jar
 ```
 
-### Undertow + RestEasy
+### RestEasy + Undertow + Freemarker
 
 The JBoss Wildfly solution. 
 Traditional approach.
@@ -80,13 +80,13 @@ RestEasy and Undertow seem to be both JBoss projects, providing infra for WildFl
 
 ```bash 
 mvn clean install
-cd undertow-resteasy/target/
-unzip undertow-resteasy-0.0.1-SNAPSHOT-distribution.zip
-cd undertow-resteasy-0.0.1-SNAPSHOT/
-java -jar undertow-resteasy-0.0.1-SNAPSHOT.jar
+cd resteasy-undertow-freemarker/target/
+unzip resteasy-undertow-freemarker-0.0.1-SNAPSHOT-distribution.zip
+cd resteasy-undertow-freemarker-0.0.1-SNAPSHOT/
+java -jar resteasy-undertow-freemarker-0.0.1-SNAPSHOT.jar
 ```
 
-### Spark
+### Spark + Jetty + Freemarker
 
 Spark has its own compact syntax for declaring rest API. 
 Seems to be core functionality with not much else.
@@ -100,14 +100,14 @@ Spark embeds Jetty server software deep inside, it is not immediately visible to
 
 ```bash 
 mvn clean install
-cd spark/target/
-unzip spark-0.0.1-SNAPSHOT-distribution.zip
-cd spark-0.0.1-SNAPSHOT/
-java -jar spark-0.0.1-SNAPSHOT.jar
+cd spark-jetty-freemarker/target/
+unzip spark-jetty-freemarker-0.0.1-SNAPSHOT-distribution.zip
+cd spark-jetty-freemarker-0.0.1-SNAPSHOT/
+java -jar spark-jetty-freemarker-0.0.1-SNAPSHOT.jar
 ```
 
 
-### Vert.x
+### Vert.x + Netty + Handlebars
 
 Vert.x is big project trying to push a (event driven and async?) paradigm.
 Multiple different features, like CLI tool, own deployment mechanisms, different languages etc.
@@ -122,8 +122,8 @@ Freemarker was found from GitHub source code, but no artifact in maven central.
 
 ```bash 
 mvn clean install
-cd spark/target/
-unzip spark-0.0.1-SNAPSHOT-distribution.zip
-cd spark-0.0.1-SNAPSHOT/
-java -jar spark-0.0.1-SNAPSHOT.jar
+cd vertx-netty-handlebars/target/
+unzip vertx-netty-handlebars-0.0.1-SNAPSHOT-distribution.zip
+cd vertx-netty-handlebars-0.0.1-SNAPSHOT/
+java -jar vertx-netty-handlebars-0.0.1-SNAPSHOT.jar
 ```

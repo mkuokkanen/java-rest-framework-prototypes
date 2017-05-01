@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>undertow-resteasy</artifactId>
+  <artifactId>resteasy-undertow-freemarker</artifactId>
 
   <properties>
     <resteasy.version>3.0.16.Final</resteasy.version>

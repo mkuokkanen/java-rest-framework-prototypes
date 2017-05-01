@@ -27,10 +27,10 @@
   </dependencies>
 
   <modules>
-    <module>grizzly-jersey</module>
-    <module>undertow-resteasy</module>
-    <module>spark</module>
-    <module>vertx</module>
+    <module>jersey-grizzly-freemarker</module>
+    <module>resteasy-undertow-freemarker</module>
+    <module>spark-jetty-freemarker</module>
+    <module>vertx-netty-handlebars</module>
   </modules>
 
   <build>

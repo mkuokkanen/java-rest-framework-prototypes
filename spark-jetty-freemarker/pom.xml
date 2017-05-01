@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>spark</artifactId>
+  <artifactId>spark-jetty-freemarker</artifactId>
 
   <properties>
     <spark.version>2.3</spark.version>
