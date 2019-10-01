@@ -40,8 +40,8 @@ public class SparkApplication {
     }
 
     private static Person handleGetJson(Request req, Response res) {
-        String name = req.queryParams("name");
-        int age = Integer.valueOf(req.queryParams("age"));
+        String name = req.queryParamOrDefault("name", "Matti");
+        int age = Integer.parseInt(req.queryParamOrDefault("age", "36"));
 
         res.type("application/json");
 
