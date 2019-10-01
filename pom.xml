@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>fi.iki.mkuokkanen.restfreemarker-proto</groupId>
-  <artifactId>aggregator</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <groupId>fi.mkuokkanen.webproto</groupId>
+  <artifactId>web-framework-aggregator</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
@@ -24,10 +24,10 @@
   </dependencies>
 
   <modules>
-    <module>jersey-grizzly-freemarker</module>
-    <module>resteasy-undertow-freemarker</module>
-    <module>spark-jetty-freemarker</module>
-    <module>vertx-netty-handlebars</module>
+    <module>jersey</module>
+    <module>resteasy</module>
+    <module>spark</module>
+    <module>vertx</module>
   </modules>
 
   <build>

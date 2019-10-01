@@ -38,8 +38,8 @@ so `java -jar daa.jar` is enough to run the software.
 mvn clean install
 cd <subfolder>/target/
 unzip <something>-distribution.zip
-cd <something>-0.0.1-SNAPSHOT/
-java -jar <something>-0.0.1-SNAPSHOT.jar
+cd <something>-1.0.0-SNAPSHOT/
+java -jar <something>-1.0.0-SNAPSHOT.jar
 ```
 
 ### Testing running software
