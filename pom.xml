@@ -8,13 +8,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <prerequisites>
-    <maven>3.2.3</maven>
-  </prerequisites>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.jdk.version>1.8</java.jdk.version>
+    <java.jdk.version>11</java.jdk.version>
+    <junit.version>4.12</junit.version>
   </properties>
 
   <dependencies>
@@ -39,7 +36,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>3.8.0</version>
           <configuration>
             <source>${java.jdk.version}</source>
             <target>${java.jdk.version}</target>
