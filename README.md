@@ -1,7 +1,7 @@
 # Java web framework prototypes
 
 Simple Java web framework prototypes implementing 
-rest endpoints, 
+rest endpoints,
 json handling and 
 html template rendering.
 
@@ -13,10 +13,11 @@ Tested with Java 11.
 
 ## Prototyped frameworks
 
-* Jersey + Grizzly + Moxy + Freemarker
-* RestEasy + Undertow + Jackson + Freemarker
-* Spark + Jetty + GSON + Freemarker
-* Vert.x + Netty + Jackson + FreeMarker
+* DropWizard: Jersey JAX-RS + Jetty + Jackson + Freemarker + glue code
+* Jersey: JAX-RS + Grizzly + Moxy + Freemarker
+* RestEasy: JAX-RS + Undertow + Jackson + Freemarker
+* Spark: Spark routing + Jetty + GSON + Freemarker
+* Vert.x: Reactive routes + Netty + Jackson + FreeMarker
 
 ## Useful maven commands for checking updates
 

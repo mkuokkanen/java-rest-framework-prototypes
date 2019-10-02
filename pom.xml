@@ -24,6 +24,7 @@
   </dependencies>
 
   <modules>
+    <module>dropwizard</module>
     <module>jersey</module>
     <module>resteasy</module>
     <module>spark</module>
