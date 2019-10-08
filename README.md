@@ -15,6 +15,7 @@ Tested with Java 11.
 
 * DropWizard: Jersey JAX-RS + Jetty + Jackson + Freemarker + glue code
 * Jersey: JAX-RS + Grizzly + Moxy + Freemarker
+* Quarkus: JAX-RS 
 * RestEasy: JAX-RS + Undertow + Jackson + Freemarker
 * Spark: Spark routing + Jetty + GSON + Freemarker
 * Vert.x: Reactive routes + Netty + Jackson + FreeMarker
