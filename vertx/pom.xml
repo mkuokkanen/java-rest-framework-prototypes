@@ -12,7 +12,7 @@
   <artifactId>vertx</artifactId>
 
   <properties>
-    <vertx.version>3.8.1</vertx.version>
+    <vertx.version>3.8.5</vertx.version>
   </properties>
 
   <dependencies>
@@ -51,9 +51,12 @@
     <plugins>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
           <archive>
             <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
               <mainClass>fi.mkuokkanen.webproto.vertx.VertxApplication</mainClass>
             </manifest>
           </archive>
@@ -61,7 +64,23 @@
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptors>
+            <descriptor>${basedir}/src/main/assembly/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
       </plugin>
     </plugins>
   </build>
