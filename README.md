@@ -29,22 +29,59 @@ mvn versions:display-plugin-updates
 
 ## Building and running software
 
-All software modules are build together from root `pom.xml` with `mvn clean install`. 
-Maven uses Assembly plugin to build zip package 
-with main artifact jar in root folder
-and dependency jars in subfolder `lib`.
-Main artifact Manifest is wired to load classes from lib folder, 
-so `java -jar daa.jar` is enough to run the software.
+### Dropwizard
 
 ```bash 
 mvn clean install
-cd <subfolder>/target/
-unzip <something>-distribution.zip
-cd <something>-1.0.0-SNAPSHOT/
-java -jar <something>-1.0.0-SNAPSHOT.jar
+cd dropwizard
+java -jar target/dropwizard-1.0.0-SNAPSHOT.jar server config.yml
 ```
 
-### Testing running software
+### Jersey
+
+```bash 
+mvn clean install
+cd jersey/target/
+unzip jersey-1.0.0-SNAPSHOT-distribution.zip
+java -jar jersey-1.0.0-SNAPSHOT/jersey-1.0.0-SNAPSHOT.jar
+```
+
+### Quarkus
+
+```bash 
+mvn clean install
+cd quarkus
+java -jar target/getting-started-1.0-SNAPSHOT-runner.jar
+```
+
+### RestEasy
+
+```bash 
+mvn clean install
+cd resteasy/target/
+unzip spark-1.0.0-SNAPSHOT-distribution.zip
+java -jar spark-1.0.0-SNAPSHOT/spark-1.0.0-SNAPSHOT.jar
+```
+
+### spark
+
+```bash 
+mvn clean install
+cd spark/target/
+unzip resteasy-1.0.0-SNAPSHOT-distribution.zip
+java -jar resteasy-1.0.0-SNAPSHOT/resteasy-1.0.0-SNAPSHOT.jar
+```
+
+### vertx
+
+```bash 
+mvn clean install
+cd vertx/target/
+unzip vertx-1.0.0-SNAPSHOT-distribution.zip
+java -jar vertx-1.0.0-SNAPSHOT/vertx-1.0.0-SNAPSHOT.jar 
+```
+
+## Testing running software
 
 ```bash 
 # Request plain text containing "hello world" as string
@@ -55,5 +92,4 @@ curl http://localhost:8080/test/page
 
 # Request JSON object
 curl "http://localhost:8080/test/json?name=Mikko&age=20"
-
 ```
