@@ -21,10 +21,11 @@
   <modules>
     <module>dropwizard</module>
     <module>jersey</module>
+    <module>quarkus</module>
     <module>resteasy</module>
     <module>spark</module>
+    <module>springboot</module>
     <module>vertx</module>
-    <module>quarkus</module>
   </modules>
 
   <build>

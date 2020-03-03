@@ -18,6 +18,7 @@ Tested with Java 11.
 * Quarkus: JAX-RS 
 * RestEasy: JAX-RS + Undertow + Jackson + Freemarker
 * Spark: Spark routing + Jetty + GSON + Freemarker
+* Spring Boot: 
 * Vert.x: Reactive routes + Netty + Jackson + FreeMarker
 
 ## Useful maven commands for checking updates
@@ -71,6 +72,16 @@ cd spark/target/
 unzip resteasy-1.0.0-SNAPSHOT-distribution.zip
 java -jar resteasy-1.0.0-SNAPSHOT/resteasy-1.0.0-SNAPSHOT.jar
 ```
+
+
+### spring boot
+
+```bash
+mvn clean install
+cd springboot
+java -jar target/springboot-1.0.0-SNAPSHOT.jar
+```
+
 
 ### vertx
 
