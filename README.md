@@ -14,6 +14,7 @@ Tested with Java 11.
 ## Prototyped frameworks
 
 * DropWizard: Jersey JAX-RS + Jetty + Jackson + Freemarker + glue code
+* Helidon: 
 * Jersey: JAX-RS + Grizzly + Moxy + Freemarker
 * Quarkus: JAX-RS 
 * RestEasy: JAX-RS + Undertow + Jackson + Freemarker
@@ -36,6 +37,14 @@ mvn versions:display-plugin-updates
 mvn clean install
 cd dropwizard
 java -jar target/dropwizard-1.0.0-SNAPSHOT.jar server config.yml
+```
+
+### Helidon
+
+```bash
+mvn clean install
+cd helidon
+java -jar target/helidon.jar
 ```
 
 ### Jersey
@@ -104,3 +113,4 @@ curl http://localhost:8080/test/page
 # Request JSON object
 curl "http://localhost:8080/test/json?name=Mikko&age=20"
 ```
+
