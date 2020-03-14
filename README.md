@@ -35,6 +35,8 @@ mvn versions:display-plugin-updates
 
 ### Dropwizard
 
+https://www.dropwizard.io/en/latest/
+
 ```bash 
 mvn clean install
 cd dropwizard
@@ -43,6 +45,8 @@ java -jar target/dropwizard-1.0.0-SNAPSHOT.jar server config.yml
 
 ### Helidon
 
+https://helidon.io/
+
 ```bash
 mvn clean install
 cd helidon
@@ -50,6 +54,8 @@ java -jar target/helidon.jar
 ```
 
 ### Jersey
+
+https://eclipse-ee4j.github.io/jersey/
 
 ```bash 
 mvn clean install
@@ -61,6 +67,8 @@ java -jar jersey-1.0.0-SNAPSHOT/jersey-1.0.0-SNAPSHOT.jar
 
 ### Pippo
 
+http://www.pippo.ro
+
 ```bash
 mvn clean install
 cd pippo/target/
@@ -71,6 +79,8 @@ java -jar pippo-1.0.0-SNAPSHOT/pippo-1.0.0-SNAPSHOT.jar
 
 ### Quarkus
 
+https://quarkus.io
+
 ```bash 
 mvn clean install
 cd quarkus
@@ -78,6 +88,8 @@ java -jar target/getting-started-1.0-SNAPSHOT-runner.jar
 ```
 
 ### RestEasy
+
+https://resteasy.github.io
 
 ```bash 
 mvn clean install
@@ -88,6 +100,8 @@ java -jar spark-1.0.0-SNAPSHOT/spark-1.0.0-SNAPSHOT.jar
 
 ### spark
 
+http://sparkjava.com
+
 ```bash 
 mvn clean install
 cd spark/target/
@@ -96,6 +110,8 @@ java -jar resteasy-1.0.0-SNAPSHOT/resteasy-1.0.0-SNAPSHOT.jar
 ```
 
 ### spincast
+
+https://www.spincast.org
 
 ```bash
 mvn clean install
@@ -106,6 +122,8 @@ java -jar spincast-1.0.0-SNAPSHOT/spincast-1.0.0-SNAPSHOT.jar
 
 ### spring boot
 
+https://spring.io/projects/spring-boot
+
 ```bash
 mvn clean install
 cd springboot
@@ -114,6 +132,8 @@ java -jar target/springboot-1.0.0-SNAPSHOT.jar
 
 
 ### vertx
+
+https://vertx.io
 
 ```bash 
 mvn clean install
