@@ -20,6 +20,7 @@ Tested with Java 11.
 * Quarkus: JAX-RS 
 * RestEasy: JAX-RS + Undertow + Jackson + Freemarker
 * Spark: Spark routing + Jetty + GSON + Freemarker
+* Spincast: 
 * Spring Boot: 
 * Vert.x: Reactive routes + Netty + Jackson + FreeMarker
 
@@ -94,6 +95,14 @@ unzip resteasy-1.0.0-SNAPSHOT-distribution.zip
 java -jar resteasy-1.0.0-SNAPSHOT/resteasy-1.0.0-SNAPSHOT.jar
 ```
 
+### spincast
+
+```bash
+mvn clean install
+cd spincast/target/
+unzip spincast-1.0.0-SNAPSHOT-distribution.zip
+java -jar spincast-1.0.0-SNAPSHOT/spincast-1.0.0-SNAPSHOT.jar
+```
 
 ### spring boot
 

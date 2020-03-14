@@ -26,6 +26,7 @@
     <module>quarkus</module>
     <module>resteasy</module>
     <module>spark</module>
+    <module>spincast</module>
     <module>springboot</module>
     <module>vertx</module>
   </modules>
