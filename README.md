@@ -16,6 +16,7 @@ Tested with Java 11.
 * DropWizard: Jersey JAX-RS + Jetty + Jackson + Freemarker + glue code
 * Helidon: 
 * Jersey: JAX-RS + Grizzly + Moxy + Freemarker
+* Pippo:
 * Quarkus: JAX-RS 
 * RestEasy: JAX-RS + Undertow + Jackson + Freemarker
 * Spark: Spark routing + Jetty + GSON + Freemarker
@@ -55,6 +56,17 @@ cd jersey/target/
 unzip jersey-1.0.0-SNAPSHOT-distribution.zip
 java -jar jersey-1.0.0-SNAPSHOT/jersey-1.0.0-SNAPSHOT.jar
 ```
+
+
+### Pippo
+
+```bash
+mvn clean install
+cd pippo/target/
+unzip pippo-1.0.0-SNAPSHOT-distribution.zip
+java -jar pippo-1.0.0-SNAPSHOT/pippo-1.0.0-SNAPSHOT.jar
+```
+
 
 ### Quarkus
 

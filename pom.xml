@@ -22,6 +22,7 @@
     <module>dropwizard</module>
     <module>helidon</module>
     <module>jersey</module>
+    <module>pippo</module>
     <module>quarkus</module>
     <module>resteasy</module>
     <module>spark</module>
