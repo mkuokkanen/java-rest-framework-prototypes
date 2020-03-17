@@ -3,18 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>fi.mkuokkanen.webproto</groupId>
-        <artifactId>web-framework-aggregator</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
     <groupId>fi.mkuokkanen.webproto</groupId>
     <artifactId>pippo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <pippo.version>1.12.0</pippo.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.jdk.version>11</java.jdk.version>
     </properties>
 
     <dependencies>
@@ -48,6 +45,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>${java.jdk.version}</source>
+                    <target>${java.jdk.version}</target>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
