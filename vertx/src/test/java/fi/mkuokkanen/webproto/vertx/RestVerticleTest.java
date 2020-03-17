@@ -1,6 +1,11 @@
 package fi.mkuokkanen.webproto.vertx;
 
-import fi.mkuokkanen.webproto.vertx.RestVerticle;
+import io.vertx.core.DeploymentOptions;
+import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
+import io.vertx.ext.unit.Async;
+import io.vertx.ext.unit.TestContext;
+import io.vertx.ext.unit.junit.VertxUnitRunner;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -9,13 +14,6 @@ import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.unit.Async;
-import io.vertx.ext.unit.TestContext;
-import io.vertx.ext.unit.junit.VertxUnitRunner;
 
 @Ignore("Netty does not work with Java 11")
 @RunWith(VertxUnitRunner.class)
@@ -34,11 +32,11 @@ public class RestVerticleTest {
         socket.close();
 
         DeploymentOptions options = new DeploymentOptions()
-            .setConfig(new JsonObject().put("http.port", port)
-            );
+                .setConfig(new JsonObject().put("http.port", port)
+                );
 
         vertx.deployVerticle(RestVerticle.class.getName(),
-                             options, context.asyncAssertSuccess());
+                options, context.asyncAssertSuccess());
     }
 
     @After

@@ -3,9 +3,8 @@ package fi.mkuokkanen.webproto.jersey;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 
-import java.net.URI;
-
 import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 
 public class JerseyServer {
 
@@ -18,9 +17,9 @@ public class JerseyServer {
     public static JerseyServer buildStartedServer() {
 
         final HttpServer grizzlyServer = GrizzlyHttpServerFactory.createHttpServer(
-            getBaseURI(),
-            new JaxRsApp(),
-            true
+                getBaseURI(),
+                new JaxRsApp(),
+                true
         );
 
         return new JerseyServer(grizzlyServer);

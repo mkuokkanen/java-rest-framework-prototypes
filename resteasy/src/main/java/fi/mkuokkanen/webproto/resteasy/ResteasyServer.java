@@ -1,9 +1,8 @@
 package fi.mkuokkanen.webproto.resteasy;
 
-import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
-
 import io.undertow.Undertow;
 import io.undertow.servlet.api.DeploymentInfo;
+import org.jboss.resteasy.plugins.server.undertow.UndertowJaxrsServer;
 
 public class ResteasyServer {
 
@@ -11,7 +10,7 @@ public class ResteasyServer {
 
     public ResteasyServer() {
         Undertow.Builder builder = Undertow.builder()
-            .addHttpListener(8080, "0.0.0.0");
+                .addHttpListener(8080, "0.0.0.0");
 
         server = new UndertowJaxrsServer();
         server.start(builder);
@@ -23,7 +22,7 @@ public class ResteasyServer {
     private void deployWithDescription() {
         DeploymentInfo di = server.undertowDeployment(JaxRsApp.class);
         di.setContextPath("/context")
-            .setDeploymentName("DI");
+                .setDeploymentName("DI");
 
         server.deploy(di);
     }

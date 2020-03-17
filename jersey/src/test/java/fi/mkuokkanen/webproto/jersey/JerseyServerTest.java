@@ -33,7 +33,7 @@ public class JerseyServerTest extends Application {
     public void testRestResource() throws Exception {
         Client client = ClientBuilder.newClient();
         String val = client.target(URL_PREFIX + "hello")
-            .request().get(String.class);
+                .request().get(String.class);
         Assert.assertEquals("hello world", val);
         client.close();
     }
@@ -42,7 +42,7 @@ public class JerseyServerTest extends Application {
     public void testPageResource() throws Exception {
         Client client = ClientBuilder.newClient();
         String val = client.target(URL_PREFIX + "page")
-            .request().get(String.class);
+                .request().get(String.class);
         assertThat(val, startsWith("Hello Matti!"));
         client.close();
     }
@@ -51,12 +51,12 @@ public class JerseyServerTest extends Application {
     public void testJsonResource() throws Exception {
         Client client = ClientBuilder.newClient();
         PersonJaxb val = client
-            .target(URL_PREFIX + "json")
-            .queryParam("name", "Mikko")
-            .queryParam("age", 15)
-            .request()
-            .accept(MediaType.APPLICATION_JSON_TYPE)
-            .get(PersonJaxb.class);
+                .target(URL_PREFIX + "json")
+                .queryParam("name", "Mikko")
+                .queryParam("age", 15)
+                .request()
+                .accept(MediaType.APPLICATION_JSON_TYPE)
+                .get(PersonJaxb.class);
 
         assertEquals(15, val.age);
         assertEquals("Mikko", val.name);

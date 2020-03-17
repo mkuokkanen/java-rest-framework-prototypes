@@ -4,17 +4,16 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
-import java.io.IOException;
-import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 @Path("/test")
 public class JaxRsResource {

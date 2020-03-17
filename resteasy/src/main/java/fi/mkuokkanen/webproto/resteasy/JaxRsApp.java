@@ -1,9 +1,8 @@
 package fi.mkuokkanen.webproto.resteasy;
 
+import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.ws.rs.core.Application;
 
 //@ApplicationPath("/app")
 public class JaxRsApp extends Application {
