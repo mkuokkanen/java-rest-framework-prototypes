@@ -5,24 +5,42 @@ rest endpoints,
 json handling and 
 html template rendering.
 
+Tested frameworks are:
+
+* DropWizard
+* Helidon
+* Jersey
+* Pippo
+* Quarkus
+* RestEasy
+* Spark
+* Spincast
+* Spring Boot
+* Vert.x
+
 Purpose is to investigate 
 how stand alone app is made with given framework 
 and what libraries it integrates.
 
 Tested with Java 11.
 
-## Prototyped frameworks
+## Summary of frameworks
 
-* DropWizard: Jersey JAX-RS + Jetty + Jackson + Freemarker + glue code
-* Helidon: 
-* Jersey: JAX-RS + Grizzly + Moxy + Freemarker
-* Pippo:
-* Quarkus: JAX-RS 
-* RestEasy: JAX-RS + Undertow + Jackson + Freemarker
-* Spark: Spark routing + Jetty + GSON + Freemarker
-* Spincast: 
-* Spring Boot: 
-* Vert.x: Reactive routes + Netty + Jackson + FreeMarker
+| Framework | Rest syntax / lib | Latest release |
+| --- | --- | --- |
+| [DropWizard](https://www.dropwizard.io/) | (Jersey?) JAX-RS | [2020-02 (2.0.2)](https://github.com/dropwizard/dropwizard/releases) |
+| [Helidon](https://helidon.io/) | (Jersey?) JAX-RS / Reactive | [2020-03 (1.4.3)](https://github.com/oracle/helidon/releases) |
+| [Jersey](https://github.com/eclipse-ee4j/jersey) | JAX-RS | [2020-02 (2.30.1)](https://github.com/eclipse-ee4j/jersey/releases) |
+| [Pippo](http://www.pippo.ro) | Pippo | [2018-12 (1.12.0)](https://github.com/pippo-java/pippo/releases) |
+| [Quarkus](https://quarkus.io) | (RestEasy?) JAX-RS / Reactive | [2020-03 (1.3.0)](https://github.com/quarkusio/quarkus/releases) |
+| [RestEasy](https://resteasy.github.io) | JAX-RS | [2020-03 (4.5.2)](https://resteasy.github.io) |
+| [Spark](http://sparkjava.com) | Spark | [2019-05 (2.9.1)](http://sparkjava.com/news) |
+| [Spincast](https://www.spincast.org) | Spincast | [2019-05 (1.14.1)](https://github.com/spincast/spincast-framework/releases) |
+| [Spring Boot](https://spring.io/projects/spring-boot) | Spring MVC / Spring WebFlux | [2020-02 (2.2.5)](https://github.com/spring-projects/spring-boot/releases) |
+| [Vert.x](https://vertx.io) | Vert.x | [2020-01 (3.8.5)](https://github.com/eclipse-vertx/vert.x/releases) |
+
+
+
 
 ## Useful maven commands for checking updates
 
@@ -35,8 +53,6 @@ mvn versions:display-plugin-updates
 
 ### Dropwizard
 
-https://www.dropwizard.io/en/latest/
-
 ```bash 
 mvn clean install
 cd dropwizard
@@ -44,8 +60,6 @@ java -jar target/dropwizard-1.0.0-SNAPSHOT.jar server config.yml
 ```
 
 ### Helidon
-
-https://helidon.io/
 
 ```bash
 mvn clean install
@@ -55,8 +69,6 @@ java -jar target/helidon.jar
 
 ### Jersey
 
-https://eclipse-ee4j.github.io/jersey/
-
 ```bash 
 mvn clean install
 cd jersey/target/
@@ -64,10 +76,7 @@ unzip jersey-1.0.0-SNAPSHOT-distribution.zip
 java -jar jersey-1.0.0-SNAPSHOT/jersey-1.0.0-SNAPSHOT.jar
 ```
 
-
 ### Pippo
-
-http://www.pippo.ro
 
 ```bash
 mvn clean install
@@ -76,10 +85,7 @@ unzip pippo-1.0.0-SNAPSHOT-distribution.zip
 java -jar pippo-1.0.0-SNAPSHOT/pippo-1.0.0-SNAPSHOT.jar
 ```
 
-
 ### Quarkus
-
-https://quarkus.io
 
 ```bash 
 mvn clean install
@@ -88,8 +94,6 @@ java -jar target/getting-started-1.0-SNAPSHOT-runner.jar
 ```
 
 ### RestEasy
-
-https://resteasy.github.io
 
 ```bash 
 mvn clean install
@@ -100,8 +104,6 @@ java -jar spark-1.0.0-SNAPSHOT/spark-1.0.0-SNAPSHOT.jar
 
 ### spark
 
-http://sparkjava.com
-
 ```bash 
 mvn clean install
 cd spark/target/
@@ -110,8 +112,6 @@ java -jar resteasy-1.0.0-SNAPSHOT/resteasy-1.0.0-SNAPSHOT.jar
 ```
 
 ### spincast
-
-https://www.spincast.org
 
 ```bash
 mvn clean install
@@ -122,18 +122,13 @@ java -jar spincast-1.0.0-SNAPSHOT/spincast-1.0.0-SNAPSHOT.jar
 
 ### spring boot
 
-https://spring.io/projects/spring-boot
-
 ```bash
 mvn clean install
 cd springboot
 java -jar target/springboot-1.0.0-SNAPSHOT.jar
 ```
 
-
 ### vertx
-
-https://vertx.io
 
 ```bash 
 mvn clean install
