@@ -10,7 +10,7 @@
     <properties>
         <resteasy.version>4.5.2.Final</resteasy.version>
         <freemarker.version>2.3.29</freemarker.version>
-        <junit.version>4.13</junit.version>
+        <junit.version>4.13.1</junit.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.jdk.version>11</java.jdk.version>
